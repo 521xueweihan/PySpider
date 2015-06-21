@@ -62,7 +62,7 @@ def many_img(data,beg = 0):
          
 def data_out(title, img):
     #写入文本
-    with open("/home/qq/data.txt", "a+") as fo:
+    with open("/home/qq/data.txt", "a+") as fo: # 在你电脑运行的时候这里的地址改一下
         fo.write('\n')
         for size in range(0, len(title)):
             # 判断img[size]中存在的是不是一个url
