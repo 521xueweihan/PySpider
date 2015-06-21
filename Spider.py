@@ -40,7 +40,7 @@ def get_img(content,beg = 0):
     try:
         img_list = []
         while True:   
-            src1 = content.index('http',beg)
+            src1 = content.index('src=',beg)+4
             src2 = content.index('/></p>',src1)
             img_list.append(content[src1:src2])
             beg = src2
@@ -135,15 +135,15 @@ def get_order(num):
 #img = get_img(content)
 #data_out(title, img)
 # 实现了爬的单个页面的title和img的url并存入文本      
-order = get_order(21)
+
+order = get_order(30) # get_order方法接受参数，抓取多少期的数据
 for i in range(0, len(order)):
-    html = getHtml(order[i]) 
-    #print html
-    #print type(html)            
+    html = getHtml(order[i])            
     content_data = content(html)
     title_data = title(content_data)
     img_data = get_img(content_data)
     data_out(title_data, img_data)
+    
 #print len(get_order(21))
 #main_html = getHtml("http://bohaishibei.com/post/category/main/page/6/")
 #clean_content = main_content(main_html) 
