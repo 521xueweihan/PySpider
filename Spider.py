@@ -99,13 +99,28 @@ def page_url(content, beg = 0):
             beg = url2
     except ValueError:
         return url   
-
         
-main_html = getHtml("http://bohaishibei.com/post/category/main/")
-clean_content = main_content(main_html) 
-str = page_url(clean_content)
-print str
-
+def get_order(num):
+    page = num / 20
+    order = num % 20 # 超出一整页的条目
+    for i in range(1, page+1): # 需这里需要尾巴
+        url = 'http://bohaishibei.com/post/category/main/page/%d' % i 
+        
+    if i == pageorder > 0:
+           
+        print url
+    
+    
+    print page
+    print '~~~~~~~~~~~~'
+    print order
+get_order(55)        
+#main_html = getHtml("http://bohaishibei.com/post/category/main/page/6/")
+#clean_content = main_content(main_html) 
+#str = page_url(clean_content)
+#print str
+#print "---------"
+#print len(str)
 
 
 
