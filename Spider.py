@@ -87,16 +87,19 @@ def main_content(html):
     return content # 得到网页的内容
   
 #<h2><a href="http://bohaishibei.com/post/10262/" title="[博海拾贝0609期]今天是个好日子 - 博海拾贝">[博海拾贝0609期]今天是个好日子</a></h2>  
+
+#进page_url：http://bohaishibei.com/post/10475/" title="[博海拾贝0620期]今天没吃粽子的不止我一个人吧 |
 def page_url(content, beg = 0):
     try:
-        many_img_str = ''
+        url = []
         while True:
             url1 = content.index('<h2><a href="',beg)+13
             url2 = content.index('" ',url1)
-            many_img_str += content[url1:url2]+'|' # 多个图片的url用"|"隔开
+            url.append(content[url1:url2])
             beg = url2
     except ValueError:
-        return many_img_str   
+        return url   
+
         
 main_html = getHtml("http://bohaishibei.com/post/category/main/")
 clean_content = main_content(main_html) 
