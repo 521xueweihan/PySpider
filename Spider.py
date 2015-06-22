@@ -137,8 +137,8 @@ def get_order(num):
 # 实现了爬的单个页面的title和img的url并存入文本      
 
 order = get_order(30) # get_order方法接受参数，抓取多少期的数据
-for i in range(0, len(order)):
-    html = getHtml(order[i])            
+for i in order:  # 遍历列表的方法
+    html = getHtml(i)            
     content_data = content(html)
     title_data = title(content_data)
     img_data = get_img(content_data)
