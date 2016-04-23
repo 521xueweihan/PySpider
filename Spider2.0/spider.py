@@ -1,18 +1,18 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
-# 
+#
 #   Author  :   XueWeiHan
 #   E-mail  :   595666367@qq.com
 #   Date    :   16/3/31 下午4:21
 #   Desc    :   爬虫
 from tornado.httpclient import HTTPRequest, AsyncHTTPClient, HTTPClient
 
-from model import db
-from config import configs
+#from model import db
+#from config import configs
 from client_config import CLIENT_CONFIG
 
 # 连接数据库
-db.create_engine(**configs['db'])
+#db.create_engine(**configs['db'])
 
 
 class Spider(object):

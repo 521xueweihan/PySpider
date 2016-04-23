@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
-# 
+#
 #   Author  :   XueWeiHan
 #   E-mail  :   595666367@qq.com
 #   Date    :   16/4/23 上午10:40
@@ -8,7 +8,7 @@
 from bs4 import BeautifulSoup
 
 from spider import Spider, Content
-from model.models import Ip
+#from model.models import Ip
 
 
 def get_ip_info(html_response):
@@ -28,10 +28,11 @@ s = Spider('http://www.xicidaili.com/nn/')
 response = s.get()
 ips = get_ip_info(response)
 
-t = Content(Ip)
+
 # 默认存到运行运行脚本的目录，文件名：data.txt
-t.save_to_file(ips)
+Content().save_to_file(ips)
 
 # 存到数据库
+#t = Content(Ip)
 # for ip_data in ips:
 #     t.save(ip_data)
