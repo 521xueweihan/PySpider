@@ -6,7 +6,11 @@
 
 ## 运行
 - 安装依赖的库：`pip install -r requirements.txt`
+
 - `python spider.py`
 
+运行效果：
+
+![](http://7xqirw.com1.z0.glb.clouddn.com/4%E6%9C%88-27-2016%2017-12-27.gif)
 ## TODO
 完善提高可用性和效率
