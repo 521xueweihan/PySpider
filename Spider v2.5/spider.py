@@ -141,8 +141,8 @@ class Proxy(object):
             ip_detail = fi_ip_info.find_all('td')
             if ip_detail:
                 # 注意：为什么我用list和str方法？否则就是bs4对象！！！
-                ips_list.append(dict(proxy_host=str(list(ip_detail)[2].string),
-                                     proxy_port=str(list(ip_detail)[3].string)))
+                ips_list.append(dict(proxy_host=str(list(ip_detail)[1].string),
+                                     proxy_port=str(list(ip_detail)[2].string)))
         return ips_list
 
 
